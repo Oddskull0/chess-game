@@ -140,10 +140,16 @@
   border: 4px solid rgba(0, 0, 0, 0.35);
   border-radius: 2px;
   pointer-events: none;
+  z-index: 1;
 }
 
-.square:hover {
-  filter: brightness(1.1);
+.square:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Move dot indicator */
@@ -154,6 +160,7 @@
   background: rgba(0, 0, 0, 0.2);
   position: absolute;
   pointer-events: none;
+  z-index: 1;
 }
 
 /* Pieces */

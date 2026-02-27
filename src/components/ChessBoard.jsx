@@ -66,9 +66,6 @@ export default function ChessBoard() {
   };
 
   const renderCaptured = (color) => {
-    const pieces = capturedPieces[color === 'w' ? 'b' : 'w']; // pieces captured FROM this color by opponent
-    // Actually capturedPieces[w] = pieces captured BY white
-    // Let's show what white captured and what black captured separately
     return capturedPieces[color].map((p, i) => (
       <span key={i} className="captured-piece">{PIECE_UNICODE[p.color + p.type]}</span>
     ));
